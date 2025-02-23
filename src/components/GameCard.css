@@ -1,0 +1,99 @@
+/* Mobile-first design */
+.game-card {
+  perspective: 1000px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.game-card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.game-card.flipped .game-card-inner {
+  transform: rotateY(180deg);
+}
+
+.game-card-front,
+.game-card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+}
+
+.game-card-front {
+  background: linear-gradient(135deg, var(--ion-color-primary), var(--ion-color-secondary));
+  color: white;
+  z-index: 2;
+}
+
+.game-card-back {
+  background: white;
+  transform: rotateY(180deg);
+  z-index: 1;
+}
+
+.animal-icon {
+  font-size: 2.5rem !important;
+  color: var(--ion-color-primary);
+}
+
+.game-card.matched .game-card-inner {
+  animation: matchedAnimation 0.5s ease-in-out;
+}
+
+.game-card.matched .animal-icon {
+  color: var(--ion-color-success);
+}
+
+.card-pattern {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.pattern-circle {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+@keyframes matchedAnimation {
+  0% { transform: scale(1) rotateY(180deg); }
+  50% { transform: scale(1.1) rotateY(180deg); }
+  100% { transform: scale(1) rotateY(180deg); }
+}
+
+/* Tablet and desktop styles */
+@media (min-width: 768px) {
+  .animal-icon {
+    font-size: 3.5rem !important;
+  }
+
+  .game-card:hover .game-card-inner:not(.flipped) {
+    transform: translateY(-5px);
+  }
+
+  .pattern-circle {
+    width: 10px;
+    height: 10px;
+  }
+}

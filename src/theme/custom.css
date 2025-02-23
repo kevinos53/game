@@ -1,0 +1,99 @@
+/* Styles personnalisés pour Marina Game */
+
+/* Section héro */
+.hero-section {
+  background: linear-gradient(135deg, var(--ion-color-primary), var(--ion-color-secondary));
+  color: white;
+  padding: 2rem;
+  border-radius: 0 0 2rem 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.hero-section h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero-section p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* Cards */
+ion-card {
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+ion-card:hover {
+  transform: translateY(-5px);
+}
+
+ion-card-header {
+  text-align: center;
+  padding-top: 1.5rem;
+}
+
+ion-card ion-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+ion-card-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+ion-card-content {
+  font-size: 1.1rem;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+/* Menu latéral */
+ion-menu ion-content {
+  --background: var(--ion-background-color);
+}
+
+ion-menu ion-item {
+  --padding-start: 1rem;
+  --padding-end: 1rem;
+  --min-height: 50px;
+  margin: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+ion-menu ion-item.selected {
+  --background: var(--ion-color-primary);
+  --color: white;
+}
+
+ion-menu ion-icon {
+  font-size: 1.5rem;
+}
+
+/* Boutons */
+ion-button {
+  --border-radius: 0.5rem;
+  font-weight: 600;
+  text-transform: none;
+  font-size: 1rem;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .hero-section {
+    padding: 4rem 2rem;
+  }
+
+  .hero-section h1 {
+    font-size: 3rem;
+  }
+
+  ion-grid {
+    padding: 1rem 2rem;
+  }
+} 
