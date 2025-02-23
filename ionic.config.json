@@ -1,0 +1,7 @@
+{
+  "name": "marinagam",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
